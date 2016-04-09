@@ -25,9 +25,9 @@ def all_movies(request):
        for movie in movies:
            data.append({"name": movie.name,
                         "director": movie.director,
-                        "imdb_score": movie.imdb_score,
+                        "imdb_score": '{0:.1f}'.format(movie.imdb_score),
                         "genre": [x.strip() for x in (movie.genre).split(",")],
-                        "99popularity": movie._99popularity,
+                        "99popularity": movie._99popularity
                         }) 
        return HttpResponse(json.dumps(data))
    
@@ -66,8 +66,8 @@ def search_movies(request):
         for movie in movies:
            data.append({"name": movie.name,
                         "director": movie.director,
-                        "imdb_score": movie.imdb_score,
+                        "imdb_score": '{0:.1f}'.format(movie.imdb_score),
                         "genre": [x.strip() for x in (movie.genre).split(",")],
-                        "99popularity": movie._99popularity,
+                        "99popularity": movie._99popularity
                         }) 
         return HttpResponse(json.dumps(data))

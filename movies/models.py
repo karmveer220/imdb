@@ -10,7 +10,7 @@ class Movies(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     
     class Meta:
-        db_table = 'Movies'
+        db_table = 'movies'
         verbose_name = 'Movie'
         verbose_name_plural = 'Movies'
 
